@@ -5,7 +5,7 @@ let Stabber = 0;
 let Squeaser = 0;
 let Prestige = 1;
 
-let ChickenCost = Chicken * 7;
+let ChickenCost = Chicken * 23;
 let PuncherCost = Puncher + 1 * 42;
 let StabberCost = Stabber + 1 * 108;
 let SqueaserCost = Squeaser + 1 * 301;
