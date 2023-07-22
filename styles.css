@@ -118,10 +118,13 @@ li a:hover {
 #Settings {
   display: none;
 }
+#About {
+  display: none;
+}
+#About h2 {
+  color: crimson;
+}
 
 #BuySoundButton {
   transform: scale(3);
-}
-#Settings {
-  vertical-align: bottom;
 }

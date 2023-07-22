@@ -6,9 +6,9 @@ let Squeaser = 0;
 let Prestige = 1;
 
 let ChickenCost = Chicken * 7;
-let PuncherCost = Puncher + 1 * 14;
-let StabberCost = Stabber + 1 * 28;
-let SqueaserCost = Squeaser + Prestige * 36;
+let PuncherCost = Puncher + 1 * 42;
+let StabberCost = Stabber + 1 * 108;
+let SqueaserCost = Squeaser + 1 * 301;
 
 const UpdateInterval = setInterval(update, 1000);
 //Conts
@@ -22,6 +22,7 @@ const StabberButton = document.getElementById('StabberButton');
 
 const GameSettingsDiv = document.getElementById('GameSetting');
 const SettingDiv = document.getElementById('Settings');
+const AboutDiv = document.getElementById('About');
 
 const chickenElement = document.getElementById('chicken');
 const countElement = document.getElementById('chickenCount');
@@ -91,7 +92,7 @@ function buyStabber() {
 }
 
 function update() {
-  eggs += Puncher + Squeaser * 3 + Stabber * 6 + Squeaser * 13;
+  eggs += (Puncher + Squeaser * 3 + Stabber * 6 + Squeaser * 13) * Prestige;
   countElement.textContent = eggs;
 }
 
@@ -104,9 +105,16 @@ function resetColor(button) {
 function openGame() {
   SettingDiv.style.display = 'none';
   GameSettingsDiv.style.display = 'block';
+  AboutDiv.style.display = 'none';
 }
 function openSettings() {
   SettingDiv.style.display = 'block';
+  GameSettingsDiv.style.display = 'none';
+  AboutDiv.style.display = 'none';
+}
+function openAbout() {
+  AboutDiv.style.display = 'block';
+  SettingDiv.style.display = 'none';
   GameSettingsDiv.style.display = 'none';
 }
 
