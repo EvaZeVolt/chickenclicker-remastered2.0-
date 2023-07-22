@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: left;
+  background-color: salmon;
+  overflow: hidden;
+}
+#unselectable {
+  user-select: none;
+}
+
+h1 {
+  color: white;
+}
+#container {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  user-select: none;
+  width: 100vw;
+  height: 100vh;
+}
+#ChickenArea {
+  border: 0.4rem solid black;
+  width: 30vw;
+  height: 100vh;
+  text-align: center;
+  font-size: 3vh;
+}
+
+#chicken {
+  margin-top: 10vh;
+  width: 30vw;
+  height: 50vh;
+  right: 2vw;
+  position: relative;
+
+  background-image: url('./Chicken.png');
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+#shop {
+  background-color: #333;
+  border: 0.4rem solid black;
+  width: 30vw;
+  height: 100vh;
+
+  display: flexbox;
+}
+#Menu {
+  border: 0.4rem solid black;
+  width: 40vw;
+  background-color: #111;
+}
+.btn {
+  text-decoration: none;
+  border-radius: 1%;
+  background-color: lightblue;
+  border: 2px solid #333;
+
+  height: 9.52vh;
+  width: 100%;
+  text-align: left;
+  vertical-align: center;
+  font-size: 3vw;
+  transition: background-color 0.2s;
+}
+
+#chicken:hover {
+  transform: scale(1.1);
+}
+#count {
+  font-size: 3vw;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  user-select: none;
+}
+#message {
+  font-size: 18px;
+  color: #888;
+}
+#instructions {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 3vh 16px;
+  text-decoration: none;
+  font-size: 1.5vw;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+#GameSetting {
+  display: block;
+}
+#Settings {
+  display: none;
+}
+
+#BuySoundButton {
+  transform: scale(3);
+}
+#Settings {
+  vertical-align: bottom;
+}
