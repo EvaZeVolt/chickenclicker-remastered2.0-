@@ -29,6 +29,7 @@ const countElement = document.getElementById('chickenCount');
 const messageElement = document.getElementById('message');
 
 var QuackAudio = new Audio('./Quack.mp3');
+var BuyAudio = new Audio('./audio/kaching.mp3');
 
 chickenElement.addEventListener('click', () => {
   eggs += Chicken;
@@ -47,6 +48,7 @@ chickenElement.addEventListener('mouseout', () => {
 function buyChicken() {
   if (eggs >= ChickenCost) {
     eggs -= ChickenCost;
+    BuyAudio.play();
     ChickenButton.style.backgroundColor = 'rgb(0,255,0)';
     setTimeout(resetColor(ChickenButton), 500000);
 
@@ -64,6 +66,7 @@ function buyChicken() {
 function buyPuncher() {
   if (eggs >= PuncherCost) {
     eggs -= PuncherCost;
+    BuyAudio.play();
     PuncherButton.style.backgroundColor = 'rgb(0,255,0)';
     setTimeout(resetColor(PuncherButton), 500000);
     Puncher++;
@@ -78,6 +81,7 @@ function buyPuncher() {
 function buySqueaser() {
   if (eggs >= SqueaserCost) {
     eggs -= SqueaserCost;
+    BuyAudio.play();
     SqueaserButton.style.backgroundColor = 'rgb(0,255,0)';
     setTimeout(resetColor(SqueaserButton), 500000);
     Squeaser++;
@@ -91,6 +95,7 @@ function buySqueaser() {
 function buyStabber() {
   if (eggs >= StabberCost) {
     eggs -= StabberCost;
+    BuyAudio.play();
     StabberButton.style.backgroundColor = 'rgb(0,500,0)';
     setTimeout(resetColor(StabberButton), 500000);
     Stabber++;
