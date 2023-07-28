@@ -47,8 +47,12 @@ chickenElement.addEventListener('mouseout', () => {
 function buyChicken() {
   if (eggs >= ChickenCost) {
     eggs -= ChickenCost;
+    ChickenButton.style.backgroundColor = 'rgb(0,255,0)';
+    setTimeout(resetColor(ChickenButton), 500000);
+
     Chicken++;
     countElement.textContent = eggs;
+
     return;
   } else {
     ChickenButton.style.backgroundColor = 'rgb(255,0,0)';
@@ -60,6 +64,8 @@ function buyChicken() {
 function buyPuncher() {
   if (eggs >= PuncherCost) {
     eggs -= PuncherCost;
+    PuncherButton.style.backgroundColor = 'rgb(0,255,0)';
+    setTimeout(resetColor(PuncherButton), 500000);
     Puncher++;
     countElement.textContent = eggs;
     return;
@@ -72,6 +78,8 @@ function buyPuncher() {
 function buySqueaser() {
   if (eggs >= SqueaserCost) {
     eggs -= SqueaserCost;
+    SqueaserButton.style.backgroundColor = 'rgb(0,255,0)';
+    setTimeout(resetColor(SqueaserButton), 500000);
     Squeaser++;
     countElement.textContent = eggs;
   } else {
@@ -83,6 +91,8 @@ function buySqueaser() {
 function buyStabber() {
   if (eggs >= StabberCost) {
     eggs -= StabberCost;
+    StabberButton.style.backgroundColor = 'rgb(0,500,0)';
+    setTimeout(resetColor(StabberButton), 500000);
     Stabber++;
     countElement.textContent = eggs;
   } else {
@@ -97,7 +107,6 @@ function update() {
 }
 
 function resetColor(button) {
-  button.style.backgroundColor = 'rgb(255, 0, 0)';
   setTimeout(() => {
     button.style.backgroundColor = 'lightblue';
   }, 200);
