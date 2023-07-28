@@ -29,7 +29,7 @@ const countElement = document.getElementById('chickenCount');
 const messageElement = document.getElementById('message');
 
 var QuackAudio = new Audio('./Quack.mp3');
-var BuyAudio = new Audio('./audio/kaching.mp3');
+var BuyAudio = new Audio('./audio/buysound.mp3');
 
 chickenElement.addEventListener('click', () => {
   eggs += Chicken;
