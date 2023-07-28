@@ -28,7 +28,8 @@ const AboutDiv = document.getElementById('About');
 const chickenElement = document.getElementById('chicken');
 const countElement = document.getElementById('chickenCount');
 const messageElement = document.getElementById('message');
-var BuySoundChecked = false;
+const BuySetting = document.getElementById('BuySoundButton');
+var BuySoundChecked = BuySetting.value;
 var BuyAudio = new Audio('./audio/buysound.mp3');
 var QuackAudio = new Audio('./Quack.mp3');
 
@@ -37,6 +38,8 @@ chickenElement.addEventListener('click', () => {
   countElement.textContent = eggs;
 
   QuackAudio.play();
+  BuySoundChecked = BuySetting.value;
+  console.log(BuySoundChecked);
 });
 
 chickenElement.addEventListener('mouseover', () => {
@@ -117,20 +120,15 @@ function resetColor(button) {
     button.style.backgroundColor = 'lightblue';
   }, 200);
 }
-function openGame() {
-  SettingDiv.style.display = 'none';
-  GameSettingsDiv.style.display = 'block';
-  AboutDiv.style.display = 'none';
-}
+
 function openSettings() {
   SettingDiv.style.display = 'block';
-  GameSettingsDiv.style.display = 'none';
+
   AboutDiv.style.display = 'none';
 }
 function openAbout() {
   AboutDiv.style.display = 'block';
   SettingDiv.style.display = 'none';
-  GameSettingsDiv.style.display = 'none';
 }
 
 function Save() {

@@ -112,14 +112,14 @@ li a {
 li a:hover {
   background-color: #111;
 }
-#GameSetting {
-  display: block;
-}
+
 #Settings {
-  display: none;
+  display: block;
 }
 #About {
   display: none;
+  background-color: #111;
+  height: 100vh;
 }
 #About h2 {
   color: crimson;
