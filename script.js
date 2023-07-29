@@ -11,14 +11,10 @@ let StabberCost = Stabber + 1 * 108;
 let SqueaserCost = Squeaser + 1 * 301;
 
 const UpdateInterval = setInterval(update, 1000);
-//Conts
 
 const ChickenButton = document.getElementById('ChickenButton');
-
 const PuncherButton = document.getElementById('PuncherButton');
-
 const SqueaserButton = document.getElementById('SqueaserButton');
-
 const StabberButton = document.getElementById('StabberButton');
 
 const GameSettingsDiv = document.getElementById('GameSetting');
@@ -28,11 +24,11 @@ const AboutDiv = document.getElementById('About');
 const chickenElement = document.getElementById('chicken');
 const countElement = document.getElementById('chickenCount');
 const messageElement = document.getElementById('message');
-//const BuySetting = document.getElementById('BuySoundButton');
-var BuySoundChecked = BuySetting.value;
+var BuySoundChecked = false;
 var BuyAudio = new Audio('./audio/buysound.mp3');
 var QuackAudio = new Audio('./Quack.mp3');
 
+//Game Loop
 chickenElement.addEventListener('click', () => {
   eggs += Chicken;
   countElement.textContent = eggs;
@@ -42,12 +38,12 @@ chickenElement.addEventListener('click', () => {
   console.log(BuySoundChecked);
 });
 
-chickenElement.addEventListener('mouseover', () => {
-  chickenElement.style.transform = 'scale(1.2)';
-});
-chickenElement.addEventListener('mouseout', () => {
-  chickenElement.style.transform = 'scale(1)';
-});
+function update() {
+  eggs += (Puncher + Squeaser * 3 + Stabber * 6 + Squeaser * 13) * Prestige;
+  countElement.textContent = eggs;
+}
+
+//Shop
 
 function buyChicken() {
   if (eggs >= ChickenCost) {
@@ -110,20 +106,18 @@ function buyStabber() {
   }
 }
 
-function update() {
-  eggs += (Puncher + Squeaser * 3 + Stabber * 6 + Squeaser * 13) * Prestige;
-  countElement.textContent = eggs;
-}
+//Animation
+chickenElement.addEventListener('mouseover', () => {
+  chickenElement.style.transform = 'scale(1.2)';
+});
+chickenElement.addEventListener('mouseout', () => {
+  chickenElement.style.transform = 'scale(1)';
+});
 
-function resetColor(button) {
-  setTimeout(() => {
-    button.style.backgroundColor = 'lightblue';
-  }, 200);
-}
+//Right Side/ Settings
 
 function openSettings() {
   SettingDiv.style.display = 'block';
-
   AboutDiv.style.display = 'none';
 }
 function openAbout() {
@@ -155,4 +149,14 @@ function Load() {
   Squeaser = parseInt(Squeaser);
 
   countElement.textContent = eggs;
+}
+
+
+
+//Useful Tools
+
+function resetColor(button) {
+  setTimeout(() => {
+    button.style.backgroundColor = 'lightblue';
+  }, 200);
 }
