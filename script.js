@@ -28,7 +28,7 @@ const AboutDiv = document.getElementById('About');
 const chickenElement = document.getElementById('chicken');
 const countElement = document.getElementById('chickenCount');
 const messageElement = document.getElementById('message');
-const BuySetting = document.getElementById('BuySoundButton');
+//const BuySetting = document.getElementById('BuySoundButton');
 var BuySoundChecked = BuySetting.value;
 var BuyAudio = new Audio('./audio/buysound.mp3');
 var QuackAudio = new Audio('./Quack.mp3');
@@ -38,7 +38,7 @@ chickenElement.addEventListener('click', () => {
   countElement.textContent = eggs;
 
   QuackAudio.play();
-  BuySoundChecked = BuySetting.value;
+
   console.log(BuySoundChecked);
 });
 
