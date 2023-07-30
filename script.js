@@ -24,7 +24,7 @@ const AboutDiv = document.getElementById('About');
 const chickenElement = document.getElementById('chicken');
 const countElement = document.getElementById('chickenCount');
 const messageElement = document.getElementById('message');
-var BuySoundChecked = false;
+var BuySoundChecked = true;
 var BuyAudio = new Audio('./audio/buysound.mp3');
 var QuackAudio = new Audio('./Quack.mp3');
 
@@ -34,8 +34,6 @@ chickenElement.addEventListener('click', () => {
   countElement.textContent = eggs;
 
   QuackAudio.play();
-
-  console.log(BuySoundChecked);
 });
 
 function update() {
@@ -151,12 +149,24 @@ function Load() {
   countElement.textContent = eggs;
 }
 
-
-
 //Useful Tools
 
 function resetColor(button) {
   setTimeout(() => {
     button.style.backgroundColor = 'lightblue';
   }, 200);
+}
+
+// Other stuff
+function BuySwitch() {
+  if (BuySoundChecked == true) {
+    BuySoundChecked = false;
+  } else BuySoundChecked = true;
+
+  if (BuySoundChecked) {
+    document.getElementById('BuyButton').textContent = 'ON';
+  }
+  if (!BuySoundChecked) {
+    document.getElementById('BuyButton').textContent = 'OFF';
+  }
 }
