@@ -4,6 +4,7 @@ let Puncher = 0;
 let Stabber = 0;
 let Squeaser = 0;
 let Prestige = 1;
+let MasterVolume = 0.5;
 
 let ChickenCost = Chicken * 23;
 let PuncherCost = Puncher + 1 * 42;
@@ -11,6 +12,7 @@ let StabberCost = Stabber + 1 * 108;
 let SqueaserCost = Squeaser + 1 * 301;
 
 const UpdateInterval = setInterval(update, 1000);
+const MusicInterval = setInterval(Music, 1000);
 
 const ChickenButton = document.getElementById('ChickenButton');
 const PuncherButton = document.getElementById('PuncherButton');
@@ -26,6 +28,7 @@ const countElement = document.getElementById('chickenCount');
 const messageElement = document.getElementById('message');
 var BuySoundChecked = true;
 var BuyAudio = new Audio('./audio/Buysound.mp3');
+var BackgroundAudio = new Audio('./audio/Backgroundsound.mp3');
 var QuackAudio = new Audio('./Quack.mp3');
 
 //Game Loop
@@ -39,6 +42,11 @@ chickenElement.addEventListener('click', () => {
 function update() {
   eggs += (Puncher + Squeaser * 3 + Stabber * 6 + Squeaser * 13) * Prestige;
   countElement.textContent = eggs;
+  BuyAudio.volume = MasterVolume;
+  MasterVolume = document.getElementById('masterVolume').value / 100;
+  BackgroundVolume = document.getElementById('backgroundVolume').value / 100;
+  console.log(MasterVolume);
+  console.log(BackgroundVolume);
 }
 
 //Shop
@@ -46,7 +54,7 @@ function update() {
 function buyChicken() {
   if (eggs >= ChickenCost) {
     eggs -= ChickenCost;
-    if (BuySoundChecked) BuyAudio.play();
+    if (BuySoundChecked == true) BuyAudio.play();
     ChickenButton.style.backgroundColor = 'rgb(0,255,0)';
     setTimeout(resetColor(ChickenButton), 500000);
 
@@ -64,7 +72,7 @@ function buyChicken() {
 function buyPuncher() {
   if (eggs >= PuncherCost) {
     eggs -= PuncherCost;
-    if (BuySoundChecked) BuyAudio.play();
+    if (BuySoundChecked == true) BuyAudio.play();
     PuncherButton.style.backgroundColor = 'rgb(0,255,0)';
     setTimeout(resetColor(PuncherButton), 500000);
     Puncher++;
@@ -79,7 +87,7 @@ function buyPuncher() {
 function buySqueaser() {
   if (eggs >= SqueaserCost) {
     eggs -= SqueaserCost;
-    if (BuySoundChecked) BuyAudio.play();
+    if (BuySoundChecked == true) BuyAudio.play();
     SqueaserButton.style.backgroundColor = 'rgb(0,255,0)';
     setTimeout(resetColor(SqueaserButton), 500000);
     Squeaser++;
@@ -93,7 +101,7 @@ function buySqueaser() {
 function buyStabber() {
   if (eggs >= StabberCost) {
     eggs -= StabberCost;
-    if (BuySoundChecked) BuyAudio.play();
+    if (BuySoundChecked == true) BuyAudio.play();
     StabberButton.style.backgroundColor = 'rgb(0,500,0)';
     setTimeout(resetColor(StabberButton), 500000);
     Stabber++;
@@ -148,16 +156,6 @@ function Load() {
 
   countElement.textContent = eggs;
 }
-
-//Useful Tools
-
-function resetColor(button) {
-  setTimeout(() => {
-    button.style.backgroundColor = 'lightblue';
-  }, 200);
-}
-
-// Other stuff
 function BuySwitch() {
   if (BuySoundChecked == true) {
     BuySoundChecked = false;
@@ -170,3 +168,15 @@ function BuySwitch() {
     document.getElementById('BuyButton').textContent = 'OFF';
   }
 }
+
+//Audio
+
+//Useful Tools
+
+function resetColor(button) {
+  setTimeout(() => {
+    button.style.backgroundColor = 'lightblue';
+  }, 200);
+}
+
+// Other stuff
