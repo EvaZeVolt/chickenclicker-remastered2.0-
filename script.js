@@ -25,7 +25,7 @@ const chickenElement = document.getElementById('chicken');
 const countElement = document.getElementById('chickenCount');
 const messageElement = document.getElementById('message');
 var BuySoundChecked = true;
-var BuyAudio = new Audio('./audio/buysound.mp3');
+var BuyAudio = new Audio('./audio/Buysound.mp3');
 var QuackAudio = new Audio('./Quack.mp3');
 
 //Game Loop
