@@ -12,7 +12,7 @@ let StabberCost = Stabber + 1 * 108;
 let SqueaserCost = Squeaser + 1 * 301;
 
 const UpdateInterval = setInterval(update, 1000);
-const MusicInterval = setInterval(Music, 1000);
+//const MusicInterval = setInterval(Music, 1000);
 
 const ChickenButton = document.getElementById('ChickenButton');
 const PuncherButton = document.getElementById('PuncherButton');
@@ -29,7 +29,9 @@ const messageElement = document.getElementById('message');
 var BuySoundChecked = true;
 var BuyAudio = new Audio('./audio/Buysound.mp3');
 var BackgroundAudio = new Audio('./audio/Backgroundsound.mp3');
-var QuackAudio = new Audio('./Quack.mp3');
+var QuackAudio = new Audio(
+  'https://cdn.jsdelivr.net/gh/EvaZeVolt/chickenclicker-remastered2.0-@main/Quack.mp3'
+);
 
 //Game Loop
 chickenElement.addEventListener('click', () => {
