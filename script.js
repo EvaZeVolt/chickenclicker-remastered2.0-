@@ -34,12 +34,12 @@ var QuackAudio = new Audio(
 );
 
 //Game Loop
-chickenElement.addEventListener('click', () => {
+function clickedChicken() {
   eggs += Chicken;
   countElement.textContent = eggs;
 
   QuackAudio.play();
-});
+}
 
 function update() {
   eggs += (Puncher + Squeaser * 3 + Stabber * 6 + Squeaser * 13) * Prestige;
