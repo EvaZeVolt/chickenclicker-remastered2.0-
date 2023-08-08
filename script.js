@@ -45,10 +45,10 @@ function update() {
   eggs += (Puncher + Squeaser * 3 + Stabber * 6 + Squeaser * 13) * Prestige;
   countElement.textContent = eggs;
   BuyAudio.volume = MasterVolume;
-  MasterVolume = document.getElementById('masterVolume').value / 100;
-  BackgroundVolume = document.getElementById('backgroundVolume').value / 100;
-  console.log(MasterVolume);
-  console.log(BackgroundVolume);
+  //MasterVolume = document.getElementById('masterVolume').value / 100;
+  //BackgroundVolume = document.getElementById('backgroundVolume').value / 100;
+  //console.log(MasterVolume);
+  // console.log(BackgroundVolume);
 }
 
 //Shop
