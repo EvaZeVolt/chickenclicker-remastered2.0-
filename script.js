@@ -196,7 +196,16 @@ function resetColor(button) {
 
 // Other stuff
 
-function Reset()
-{
+function Reset() {
+  let confirmed = false;
   
+
+  if (confirmed) {
+    eggs = 0;
+    Chicken = 1;
+    Puncher = 0;
+    Stabber = 0;
+    Squeaser = 0;
+    Prestige = 1;
+  }
 }
