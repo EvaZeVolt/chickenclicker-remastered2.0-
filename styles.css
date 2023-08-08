@@ -124,3 +124,16 @@ li a:hover {
 button {
   font-size: 5vh;
 }
+#ResetBox {
+  width: 30vw;
+  height: 50vh;
+  background-color: red;
+
+  left: 30%;
+  top: 30%;
+
+  position: absolute;
+  color: wheat;
+
+  font-size: 120vh;
+}
