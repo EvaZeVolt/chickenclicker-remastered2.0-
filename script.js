@@ -27,8 +27,13 @@ const chickenElement = document.getElementById('chicken');
 const countElement = document.getElementById('chickenCount');
 const messageElement = document.getElementById('message');
 var BuySoundChecked = true;
-var BuyAudio = new Audio('./audio/Buysound.mp3');
-var BackgroundAudio = new Audio('./audio/Backgroundsound.mp3');
+var BuyAudio = new Audio(
+  'https://github.com/EvaZeVolt/chickenclicker-remastered2.0-/raw/main/audio/BuySound.mp3'
+);
+var BackgroundAudio = new Audio(
+  'https://github.com/EvaZeVolt/chickenclicker-remastered2.0-/raw/main/audio/BackgroundAudio.mp3'
+);
+
 var QuackAudio = new Audio(
   'https://cdn.jsdelivr.net/gh/EvaZeVolt/chickenclicker-remastered2.0-@main/Quack.mp3'
 );
@@ -37,16 +42,14 @@ var QuackAudio = new Audio(
 function clickedChicken() {
   eggs += Chicken;
   countElement.textContent = eggs;
-
+  QuackAudio.volume = MasterVolume;
   QuackAudio.play();
 }
 
 function update() {
   eggs += (Puncher + Squeaser * 3 + Stabber * 6 + Squeaser * 13) * Prestige;
   countElement.textContent = eggs;
-  BuyAudio.volume = MasterVolume;
-  //MasterVolume = document.getElementById('masterVolume').value / 100;
-  //BackgroundVolume = document.getElementById('backgroundVolume').value / 100;
+
   //console.log(MasterVolume);
   // console.log(BackgroundVolume);
 }
@@ -141,6 +144,7 @@ function Save() {
   localStorage.setItem('Squeaser', Squeaser);
   localStorage.setItem('Prestige', Prestige);
 }
+
 function Load() {
   eggs = localStorage.getItem('eggs');
   eggs = parseInt(eggs);
@@ -158,6 +162,7 @@ function Load() {
 
   countElement.textContent = eggs;
 }
+
 function BuySwitch() {
   if (BuySoundChecked == true) {
     BuySoundChecked = false;
@@ -172,6 +177,14 @@ function BuySwitch() {
 }
 
 //Audio
+function playAudio(audio) {
+  setTimeout(() => {
+    audio.play();
+  }, 200);
+}
+function changeVolume(audio, volume) {
+  audio.volume = volume;
+}
 
 //Useful Tools
 
@@ -182,3 +195,8 @@ function resetColor(button) {
 }
 
 // Other stuff
+
+function Reset()
+{
+  
+}
