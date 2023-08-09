@@ -127,7 +127,7 @@ button {
 #ResetBox {
   width: 30vw;
   height: 50vh;
-  background-color: red;
+  background-color: transparent;
 
   left: 30%;
   top: 30%;

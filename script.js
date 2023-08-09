@@ -12,7 +12,6 @@ let StabberCost = Stabber + 1 * 108;
 let SqueaserCost = Squeaser + 1 * 301;
 
 const UpdateInterval = setInterval(update, 1000);
-//const MusicInterval = setInterval(Music, 1000);
 
 const ChickenButton = document.getElementById('ChickenButton');
 const PuncherButton = document.getElementById('PuncherButton');
@@ -35,7 +34,7 @@ var BackgroundAudio = new Audio(
 );
 
 var QuackAudio = new Audio(
-  'https://cdn.jsdelivr.net/gh/EvaZeVolt/chickenclicker-remastered2.0-@main/Quack.mp3'
+  'https://github.com/EvaZeVolt/chickenclicker-remastered2.0-/raw/main/audio/BuySound.mp3'
 );
 
 //Game Loop
@@ -198,7 +197,6 @@ function resetColor(button) {
 
 function Reset() {
   let confirmed = false;
-  
 
   if (confirmed) {
     eggs = 0;
